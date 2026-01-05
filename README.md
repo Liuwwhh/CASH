@@ -28,7 +28,7 @@ Official PyTorch implementation of **“Do More with Less: Capacity-Aware Select
 ### Abstract Overview
 
 <p align="center">
-  <img src="./Figure1.png" width="66%" alt="Figure 1: Overview">
+  <img src="./Figure/Figure1.png" width="66%" alt="Figure 1: Overview">
   <br>
   <em><strong>Figure 1.</strong> Abstract overview: motivation and core components.</em>
 </p>
@@ -36,7 +36,7 @@ Official PyTorch implementation of **“Do More with Less: Capacity-Aware Select
 ### Framework
 
 <p align="center">
-  <img src="./Figure2.png" width="88%" alt="Figure 2: Framework">
+  <img src="./Figure/Figure2.png" width="88%" alt="Figure 2: Framework">
   <br>
   <em><strong>Figure 2.</strong> Framework: two-stage pipeline and module-level design.</em>
 </p>
