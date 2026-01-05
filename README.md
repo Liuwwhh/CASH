@@ -80,19 +80,19 @@ Overview of the proposed CASH framework.
 
 ```text
 MSCOCO-Balanced
-url: https://pan.baidu.com/s/1uJ5DgDIJIBRownazZXOWnA?pwd=2025
+url: https://pan.baidu.com/s/1d43aIScpKsoxgPucVLfXzg?pwd=2026
 code: 2026
 
 NUSWIDE-Balanced
-url: https://pan.baidu.com/s/17Rn92JwYELzV4YNQ2bndmg?pwd=2025
+url: https://pan.baidu.com/s/12vnyVsIa-sKVkm69E3m57w?pwd=2026
 code: 2026
 
 MSCOCO-Imbalance
-url: https://pan.baidu.com/s/1gzUoMh3P-hH2iNysMxWSBA?pwd=2025
+url: https://pan.baidu.com/s/1rvkp5XturvLCITIr0d-Cjw?pwd=2026
 code: 2026
 
 NUSWIDE-Imbalance
-url: https://pan.baidu.com/s/1njmBa0j0EfeD_CzT0V4ZgA?pwd=2025
+url: https://pan.baidu.com/s/1islyOdA4kbXVwebtdToQiw?pwd=2026
 code: 2026
 ```
 
