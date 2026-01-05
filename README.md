@@ -36,7 +36,7 @@ Official PyTorch implementation of **“Do More with Less: Capacity-Aware Select
 ### Framework
 
 <p align="center">
-  <img src="./Figure/Figure2.png" width="88%" alt="Figure 2: Framework">
+  <img src="./Figure/Figure2.png" width="100%" alt="Figure 2: Framework">
   <br>
   <em><strong>Figure 2.</strong> Framework: two-stage pipeline and module-level design.</em>
 </p>
