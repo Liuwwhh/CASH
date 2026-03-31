@@ -33,6 +33,8 @@ Official PyTorch implementation of **“Do More with Less: Capacity-Aware Select
   <em><strong>Figure 1.</strong> Abstract overview: motivation and core components.</em>
 </p>
 
+---
+
 ### Framework
 
 <p align="center">
@@ -73,7 +75,7 @@ Overview of the proposed CASH framework.
 └── utils.py       # metrics (mAP@K), losses, logging, CSV dumping, seeding
 
 ```
-
+---
 ## 📦 Datasets
 
 1. Download datasets (MSCOCO and NUSWIDE)
@@ -96,7 +98,166 @@ url: https://pan.baidu.com/s/1islyOdA4kbXVwebtdToQiw?pwd=2026
 code: 2026
 ```
 
+---
+
 2. Set the dataset root path (recommended via command line), or change the value of `data_path` in `main.py` to `/path/to/data`.
+
+---
+
+3. Dataset Partition Protocols
+
+The following table summarizes the task partition settings used in our continual cross-modal retrieval experiments on **MSCOCO** and **NUSWIDE**. For each dataset, we report the number of **query**, **training**, and **database** samples, together with the corresponding **semantic categories** assigned to each incremental task. We consider both **balanced** and **imbalanced** partition protocols. In the balanced setting, categories are distributed more evenly across tasks to provide a relatively uniform incremental stream; in the imbalanced setting, task sizes vary significantly to better simulate realistic non-stationary data arrival. Specifically, **MSCOCO** is divided into **5 tasks with 16 categories per task**, while **NUSWIDE** is divided into **5 tasks with 16/16/16/16/17 categories**, respectively. Unless otherwise stated, all experiments follow these predefined task splits for fair comparison and reproducibility.
+
+<table>
+  <tr>
+    <th>Datasets</th>
+    <th>Partition</th>
+    <th>Subset</th>
+    <th>Task 1</th>
+    <th>Task 2</th>
+    <th>Task 3</th>
+    <th>Task 4</th>
+    <th>Task 5</th>
+  </tr>
+
+  <!-- MSCOCO -->
+  <tr>
+    <td rowspan="8">MSCOCO<br>16/16/16/16/16</td>
+    <td rowspan="4">Balanced</td>
+    <td>Query Samples</td>
+    <td>600</td>
+    <td>600</td>
+    <td>600</td>
+    <td>600</td>
+    <td>600</td>
+  </tr>
+  <tr>
+    <td>Training Samples</td>
+    <td>2,402</td>
+    <td>2,250</td>
+    <td>2,313</td>
+    <td>2,620</td>
+    <td>2,558</td>
+  </tr>
+  <tr>
+    <td>Database Samples</td>
+    <td>6,605</td>
+    <td>6,224</td>
+    <td>6,382</td>
+    <td>7,150</td>
+    <td>6,996</td>
+  </tr>
+  <tr>
+    <td>Categories</td>
+    <td>bicycle, car, bus, train, fire hydrant, stop sign, bench, cat, sheep, tennis racket, bottle, knife, orange, carrot, tv, keyboard</td>
+    <td>person, dog, suitcase, snowboardbaseball bat, baseball glove, wine glass, spoon, apple, donut, bed, laptop, remote, microwave, toaster, book</td>
+    <td>truck, boat, traffic light, horse, elephant, handbag, frisbee, sports ball, cup, pizza, cake, potted plant, clock, vase, scissors, hair drier</td>
+    <td>airplane, bird, tie, skis, kite, surfboard, fork, bowl, hot dog, couch, toilet, oven, sink, refrigerator, teddy bear, toothbrush</td>
+    <td>motorcycle, parking meter, cow, bear, zebra, giraffe, backpack, umbrella, skateboard, banana, sandwich, hot dog, chair, couch, dining table, cell phone</td>
+  </tr>
+  <tr>
+    <td rowspan="4">Imbalanced</td>
+    <td>Query Samples</td>
+    <td>2,124</td>
+    <td>956</td>
+    <td>116</td>
+    <td>484</td>
+    <td>437</td>
+  </tr>
+  <tr>
+    <td>Training Samples</td>
+    <td>7,647</td>
+    <td>3,444</td>
+    <td>418</td>
+    <td>1,743</td>
+    <td>1,574</td>
+  </tr>
+  <tr>
+    <td>Database Samples</td>
+    <td>19,118</td>
+    <td>8,611</td>
+    <td>1,046</td>
+    <td>4,357</td>
+    <td>3,934</td>
+  </tr>
+  <tr>
+    <td>Categories</td>
+    <td>person, bicycle, car, motorcycle, airplane, bus, train, truck, boat, traffic light, fire hydrant, stop sign, parking meter, bench, bird, cat</td>
+    <td>dog, horse, sheep, cow, elephant, bear, zebra, giraffe, backpack, umbrella, handbag, tie, suitcase, frisbee, skis, snowboard</td>
+    <td>sports ball, kite, baseball bat, baseball glove, skateboard, surfboard, tennis racket, bottle, wine glass, cup, fork, knife, spoon, bowl, banana, apple</td>
+    <td>sandwich, orange, orange, carrot, hot dog, pizza, donut, cake, chair, couch, potted plant, bed, dining table, toilet, tv, laptop</td>
+    <td>mouse, remote, keyboard, cell phone, microwave, oven, toaster, sink, refrigerator, book, clock, vase, scissors, teddy bear, hair drier, toothbrush</td>
+  </tr>
+
+  <!-- NUSWIDE -->
+  <tr>
+    <td rowspan="8">NUSWIDE<br>16/16/16/16/17</td>
+    <td rowspan="4">Balanced</td>
+    <td>Query Samples</td>
+    <td>2,124</td>
+    <td>956</td>
+    <td>116</td>
+    <td>484</td>
+    <td>437</td>
+  </tr>
+  <tr>
+    <td>Training Samples</td>
+    <td>7,647</td>
+    <td>3,444</td>
+    <td>418</td>
+    <td>1,743</td>
+    <td>1,574</td>
+  </tr>
+  <tr>
+    <td>Database Samples</td>
+    <td>19,118</td>
+    <td>8,611</td>
+    <td>1,046</td>
+    <td>4,357</td>
+    <td>3,934</td>
+  </tr>
+  <tr>
+    <td>Categories</td>
+    <td>book, elk, fire, flags, flowers, fox, frost, nighttime, ocean, person, reflection, sign, snow, soccer, toy, train</td>
+    <td>beach, bear, bridge, clouds, cow, dancing, earthquake, fish, house, military, plants, sports, sun, temple, whales, window</td>
+    <td>airport, boats, cat, computer, glacier, map, mountain, railroad, rainbow, road, rocks, sky, statue, sunset, tree, valley</td>
+    <td>castle, dog, food, garden, harbor, leaf, moon, plane, police, sand, swimmers, tower, town, water, waterfall, wedding</td>
+    <td>animal, birds, buildings, cars, cityscape, coral, grass, horses, lake, protest, running, street, surf, tattoo, tiger, vehicle, zebra</td>
+  </tr>
+  <tr>
+    <td rowspan="4">Imbalanced</td>
+    <td>Query Samples</td>
+    <td>1,796</td>
+    <td>1,489</td>
+    <td>1,252</td>
+    <td>2,261</td>
+    <td>1,602</td>
+  </tr>
+  <tr>
+    <td>Training Samples</td>
+    <td>6,469</td>
+    <td>5,363</td>
+    <td>4,508</td>
+    <td>8,140</td>
+    <td>5,768</td>
+  </tr>
+  <tr>
+    <td>Database Samples</td>
+    <td>16,172</td>
+    <td>13,407</td>
+    <td>11,269</td>
+    <td>20,349</td>
+    <td>14,419</td>
+  </tr>
+  <tr>
+    <td>Categories</td>
+    <td>airport, animal, beach, bear, birds, boats,book, bridge, buildings, cars, castle, cat, cityscape, clouds, computer, coral</td>
+    <td>cow, dancing, dog, earthquake, elk, fire, fish, flags, flowers, food, fox, frost, garden, glacier, grass, harbor</td>
+    <td>horses, house, lake, leaf, map, military, moon, mountain, nighttime, ocean, person, plane, plants, police, protest, railroad</td>
+    <td>rainbow, reflection, road, rocks, running, sand, sign, sky, snow, soccer, sports, statue, street, sun, sunset, surf</td>
+    <td>swimmers, tattoo, temple, tiger, tower, town, toy, train, tree, valley, vehicle, water, waterfall, wedding, whales, window, zebra</td>
+  </tr>
+</table>
 
 ---
 
@@ -106,6 +267,8 @@ code: 2026
 
 * Python 3.8+
 * CUDA is recommended for training
+
+---
 
 ### Install dependencies
 
