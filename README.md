@@ -150,10 +150,10 @@ The following table summarizes the task partition settings used in our continual
   <tr>
     <td>Categories</td>
     <td>bicycle, car, bus, train, fire hydrant, stop sign, bench, cat, sheep, tennis racket, bottle, knife, orange, carrot, tv, keyboard</td>
-    <td>person, dog, suitcase, snowboardbaseball bat, baseball glove, wine glass, spoon, apple, donut, bed, laptop, remote, microwave, toaster, book</td>
+    <td>person, dog, suitcase, snowboard, baseball bat, baseball glove, wine glass, spoon, apple, donut, bed, laptop, remote, microwave, toaster, book</td>
     <td>truck, boat, traffic light, horse, elephant, handbag, frisbee, sports ball, cup, pizza, cake, potted plant, clock, vase, scissors, hair drier</td>
     <td>airplane, bird, tie, skis, kite, surfboard, fork, bowl, hot dog, couch, toilet, oven, sink, refrigerator, teddy bear, toothbrush</td>
-    <td>motorcycle, parking meter, cow, bear, zebra, giraffe, backpack, umbrella, skateboard, banana, sandwich, hot dog, chair, couch, dining table, cell phone</td>
+    <td>motorcycle, parking meter, cow, bear, zebra, giraffe, backpack, umbrella, skateboard, banana, sandwich, broccoli, chair, mouse, dining table, cell phone</td>
   </tr>
   <tr>
     <td rowspan="4">Imbalanced</td>
@@ -185,7 +185,7 @@ The following table summarizes the task partition settings used in our continual
     <td>person, bicycle, car, motorcycle, airplane, bus, train, truck, boat, traffic light, fire hydrant, stop sign, parking meter, bench, bird, cat</td>
     <td>dog, horse, sheep, cow, elephant, bear, zebra, giraffe, backpack, umbrella, handbag, tie, suitcase, frisbee, skis, snowboard</td>
     <td>sports ball, kite, baseball bat, baseball glove, skateboard, surfboard, tennis racket, bottle, wine glass, cup, fork, knife, spoon, bowl, banana, apple</td>
-    <td>sandwich, orange, orange, carrot, hot dog, pizza, donut, cake, chair, couch, potted plant, bed, dining table, toilet, tv, laptop</td>
+    <td>sandwich, broccoli, orange, carrot, hot dog, pizza, donut, cake, chair, couch, potted plant, bed, dining table, toilet, tv, laptop</td>
     <td>mouse, remote, keyboard, cell phone, microwave, oven, toaster, sink, refrigerator, book, clock, vase, scissors, teddy bear, hair drier, toothbrush</td>
   </tr>
 
@@ -194,27 +194,27 @@ The following table summarizes the task partition settings used in our continual
     <td rowspan="8">NUSWIDE<br>16/16/16/16/17</td>
     <td rowspan="4">Balanced</td>
     <td>Query Samples</td>
-    <td>2,124</td>
-    <td>956</td>
-    <td>116</td>
-    <td>484</td>
-    <td>437</td>
+    <td>1,500</td>
+    <td>1,500</td>
+    <td>1,500</td>
+    <td>1,500</td>
+    <td>1,500</td>
   </tr>
   <tr>
     <td>Training Samples</td>
-    <td>7,647</td>
-    <td>3,444</td>
-    <td>418</td>
-    <td>1,743</td>
-    <td>1,574</td>
+    <td>5,430</td>
+    <td>6,024</td>
+    <td>6,194</td>
+    <td>6,061</td>
+    <td>6,091</td>
   </tr>
   <tr>
     <td>Database Samples</td>
-    <td>19,118</td>
-    <td>8,611</td>
-    <td>1,046</td>
-    <td>4,357</td>
-    <td>3,934</td>
+    <td>15,430</td>
+    <td>16,559</td>
+    <td>16,986</td>
+    <td>16,652</td>
+    <td>16,727</td>
   </tr>
   <tr>
     <td>Categories</td>
@@ -251,7 +251,7 @@ The following table summarizes the task partition settings used in our continual
   </tr>
   <tr>
     <td>Categories</td>
-    <td>airport, animal, beach, bear, birds, boats,book, bridge, buildings, cars, castle, cat, cityscape, clouds, computer, coral</td>
+    <td>airport, animal, beach, bear, birds, boats, book, bridge, buildings, cars, castle, cat, cityscape, clouds, computer, coral</td>
     <td>cow, dancing, dog, earthquake, elk, fire, fish, flags, flowers, food, fox, frost, garden, glacier, grass, harbor</td>
     <td>horses, house, lake, leaf, map, military, moon, mountain, nighttime, ocean, person, plane, plants, police, protest, railroad</td>
     <td>rainbow, reflection, road, rocks, running, sand, sign, sky, snow, soccer, sports, statue, street, sun, sunset, surf</td>
